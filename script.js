@@ -8,12 +8,12 @@ const ul = document.createElement('ul');
 
 fetch(API_URL+'/all')
 .then((response) => response.json())
-.then((all) => {
+.then(all => {
   all.forEach((all) => {
-       let element = document.createElement("li");
+       const element = document.createElement("li");
        element.appendChild(
            document.createTextNode('all.title')
-       );
+       ); 
        ul.appendChild(element);
 
 
