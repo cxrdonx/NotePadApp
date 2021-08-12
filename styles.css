@@ -1,0 +1,57 @@
+:root{
+    --warm-black: #201e1c;
+    --black: #282623;
+    --grey: #bababa;
+    --off-shite: #faf8f7;
+    --just-shite: #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 65.5%;
+}
+
+ .header--icon-container span{
+    display: inline-block;
+    width: 20px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url("/icons/plus.png");
+}
+
+
+.container{
+    width: 90%;
+    margin-top: 50px;
+    min-width: 100px;
+    
+}
+
+
+
+div{
+    width: 90%;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Lucida", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+   text-overflow: ellipsis;
+     border-radius: 10px;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+p{
+    font-size:  1rem;
+    margin-bottom: 20px;
+    border-bottom: #201e1c 1px solid;
+}
+

@@ -3,50 +3,38 @@ console.log("RUNNING");
 
 const API_URL = "http://localhost:8090/notepad-api/notes";
 //fetch petition
-const HTMLResponse = document.querySelector(".app");
-const ul = document.createElement('ul');
+const HTMLResponse = document.querySelector(".container");
+const div = document.createElement('div');
+const lista = document.querySelector("lista-lista");
 
-fetch(API_URL+'/all')
-.then((response) => response.json())
-.then(all => {
-  all.forEach((all) => {
-       const element = document.createElement("li");
-       element.appendChild(
-           document.createTextNode('all.title')
-       ); 
-       ul.appendChild(element);
+fetch(API_URL+"/all")
+ .then((response) => response.json())
+ .then((all) => {
+    all.forEach((alls)=>{
+
+        let elem = document.createElement('h2');
+        let paraph= document.createElement('p');
+        elem.appendChild(
+          document.createTextNode(alls.title),
+         
+        );
+          paraph.appendChild(
+            document.createTextNode(alls.note)
+          )
+
+  //    let body = document.createElement('li');
+    //     body.appendChild(
+    //      document.createTextNode(alls.note),
+   //      );
+
+        div.appendChild(elem);
+        div.appendChild(paraph);
+
+    });
+
+    HTMLResponse.appendChild(div);
+ });
 
 
-});
-
-   HTMLResponse.appendChild = (ul);
-});
-
-//nasa api
-    
 
 
-
-
-
-/*
-//create ajax request
-const xhr = new XMLHttpRequest();
-//xhttp.onready
-function onRequestHandler(){
-  if (this.readyState === 4 && this.status === 200) {
-     const data = JSON.parse(this.response);
-    console.log(data);
-  }
-}
-
-xhr.addEventListener("load", onRequestHandler);
-xhr.open("GET", API_URL+'/all');
-xhr.send();
-
-//fetch api
-fetch(API_URL+'/all')
-.then(response => response.json())
-.then(json => console.log(json));
-
-*/
