@@ -17,7 +17,7 @@
             </div>   
 
             <div class="window-form" id="window-form">
-            <form id="formulario">
+            <form id="formulario" method="POST" >
                 <div class="form-floating mb-3">
                     <input type="title" class="form-control" id="title">
                     <label for="floatingInput">Título</label>
@@ -25,7 +25,7 @@
                   <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="note" style="height: 100px;"></textarea>
                     <label for="floatingTextarea">Nota</label>
-                    <button type="button" class="btn btn-light" id="guardar">Guardar</button>
+                    <button type="submit" class="btn btn-light" id="guardar" value="submit">Guardar</button>
                     <button type="button" class="btn btn-dark">Limpiar</button>
                   </div>
                 </form>

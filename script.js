@@ -40,15 +40,9 @@ fetch(API_URL+"/all")
 
  var window = document.getElementById("window-form")
    window.style.display ="none";
-  
  const agregar = document.getElementById("agregar");
  const close_button = document.getElementById('close-button');
-
-
 agregar.addEventListener("click", function(){
-
-  
-  
    if(window.style.display == "none"){
      window.style.display = "block";
 
@@ -57,12 +51,14 @@ agregar.addEventListener("click", function(){
    }
 });
 
+
 const guardar = document.getElementById("guardar");
 guardar.addEventListener("click", function(){
        const title = new FormData(document.getElementById('formulario'));
+    
       
   fetch(API_URL+"/save", {
-    method: "POST",
+    method: 'POST',
     body: title,
 
   })
