@@ -6,7 +6,10 @@ const HTMLResponse = document.querySelector(".notes--container");
 const div = document.createElement('div');
 div.className = "notes--container-dashboard";
 const lista = document.querySelector("lista-lista");
-
+var window = document.getElementById("window-form")
+window.style.display ="none";
+const agregar = document.getElementById("agregar");
+const close_button = document.getElementById('close-button');
 fetch(API_URL+"/all")
  .then((response) => response.json())
  .then((all) => {
@@ -38,10 +41,6 @@ fetch(API_URL+"/all")
 
 
 
- var window = document.getElementById("window-form")
-   window.style.display ="none";
- const agregar = document.getElementById("agregar");
- const close_button = document.getElementById('close-button');
 agregar.addEventListener("click", function(){
    if(window.style.display == "none"){
      window.style.display = "block";
@@ -54,28 +53,26 @@ agregar.addEventListener("click", function(){
 
 const guardar = document.getElementById("guardar");
 guardar.addEventListener("click", function(){
-       const title = new FormData(document.getElementById('formulario'));
-    
-      
+     //  const title = new FormData(document.getElementById('formulario'));
+      const title = document.getElementById('title').value;
+      const note = document.getElementById('note').value;
+
+      var data = { title: title,
+      note: note
+         }
+
+         console.log(data);
+
   fetch(API_URL+"/save", {
     method: 'POST',
-    body: title,
-
-  })
-  .then(function(response) {
-    if(response.ok){
-    return response.json();
-  }else{
-    throw "error en la llamada";
-  }
-})
-  .then(function(data) {
-   console(texto);
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
-  
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json'
+    }
+}).then(res => res.json())
+.catch(error => console.error('Error:', error))
+.then(response => console.log('Success:', response), alert("Nota Guardada"));
+      location.reload();
 });
 
 
