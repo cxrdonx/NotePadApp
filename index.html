@@ -16,21 +16,25 @@
                  <a href="#" id="agregar">Agregar<span></span></a> 
             </div>   
 
-            <div class="window-form" id="window-form">
-            <form id="formulario" >
-                <div class="form-floating mb-3">
-                    <input type="title" class="form-control" id="title">
-                    <label for="floatingInput">Título</label>
-                  </div>
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="note" style="height: 100px;"></textarea>
-                    <label for="floatingTextarea">Nota</label>
-                    <button type="submit" class="btn btn-light" id="guardar" value="submit">Guardar</button>
-                    <button type="button" class="btn btn-dark">Limpiar</button>
-                  </div>
-                </form>
-            </div>
+           
        </header>
+
+       <div class="window-form" id="window-form">
+        <form id="formulario" >
+          <div class="window-form--container">
+            <div class="form-floating mb-3" id="formFloat">
+                <input type="title" class="form-control" id="title">
+                <label for="floatingInput">Título</label>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="note" style="height: 100px;"></textarea>
+                <label for="floatingTextarea">Nota</label>
+                <button type="submit" class="btn btn-light" id="guardar" value="submit">Guardar</button>
+                <button type="button" class="btn btn-dark" id="limpiar">Limpiar</button>
+              </div>
+            </form>
+            </div>
+        </div>
     
            <section class="notes--container">
                 

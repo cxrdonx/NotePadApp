@@ -52,7 +52,8 @@ agregar.addEventListener("click", function(){
 
 
 const guardar = document.getElementById("guardar");
-guardar.addEventListener("click", function(){
+const limpiar = document.getElementById("limpiar");
+guardar.addEventListener("click", function(){ 
      //  const title = new FormData(document.getElementById('formulario'));
       const title = document.getElementById('title').value;
       const note = document.getElementById('note').value;
@@ -71,8 +72,14 @@ guardar.addEventListener("click", function(){
     }
 }).then(res => res.json())
 .catch(error => console.error('Error:', error))
-.then(response => console.log('Success:', response), alert("Nota Guardada"));
+.then(response => console.log('Success:', response));
       location.reload();
+});
+
+limpiar.addEventListener("click", function(){
+       title.value = "";  
+       note.value = "";
+
 });
 
 
