@@ -1,6 +1,7 @@
 
 
 const API_URL = "http://localhost:8090/notepad-api/notes";
+var request = new XMLHttpRequest();
 //fetch petition
 const HTMLResponse = document.querySelector(".notes--container");
 const div = document.createElement('div');
@@ -38,9 +39,6 @@ fetch(API_URL+"/all")
     HTMLResponse.appendChild(div);
  });
 
-
-
-
 agregar.addEventListener("click", function(){
    if(window.style.display == "none"){
      window.style.display = "block";
@@ -57,9 +55,13 @@ guardar.addEventListener("click", function(){
      //  const title = new FormData(document.getElementById('formulario'));
       const title = document.getElementById('title').value;
       const note = document.getElementById('note').value;
-
+      const fecha = new Date();
+      if(title == "" || note == ""){
+        alert("No puede dejar campos vacios");
+      }else{
       var data = { title: title,
-      note: note
+      note: note,
+      datenote: fecha
          }
 
          console.log(data);
@@ -71,10 +73,14 @@ guardar.addEventListener("click", function(){
       'Content-type': 'application/json'
     }
 }).then(res => res.json())
-.catch(error => console.error('Error:', error))
+.catch(error => console.error('Error:', error)) 
 .then(response => console.log('Success:', response));
-      location.reload();
+     if(request.status == 200){
+        alert("suck my dick");
+     }
+    }
 });
+
 
 limpiar.addEventListener("click", function(){
        title.value = "";  

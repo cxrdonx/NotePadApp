@@ -13,7 +13,7 @@
 }
 
 html{
-    font-size: 65.5%;
+    font-size: 80%;
 }
 
  /*.header--icon-container span{
@@ -89,3 +89,12 @@ p{
     border-bottom: #201e1c 1px solid;
 }
 
+.window-form #guardar{
+   min-width: 30%;
+   max-width: 40%;
+}
+
+.window-form #limpiar{
+     min-width: 30%;
+     max-width: 40%;
+}
