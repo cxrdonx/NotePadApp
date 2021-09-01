@@ -6,11 +6,13 @@ var request = new XMLHttpRequest();
 const HTMLResponse = document.querySelector(".notes--container");
 const div = document.createElement('div');
 div.className = "notes--container-dashboard";
+div.className = "notes--all-container";
 const lista = document.querySelector("lista-lista");
 var window = document.getElementById("window-form")
 window.style.display ="none";
 const agregar = document.getElementById("agregar");
 const close_button = document.getElementById('close-button');
+
 fetch(API_URL+"/all")
  .then((response) => response.json())
  .then((all) => {
@@ -25,11 +27,6 @@ fetch(API_URL+"/all")
           paraph.appendChild(
             document.createTextNode(alls.note)
           )
-
-  //    let body = document.createElement('li');
-    //     body.appendChild(
-    //      document.createTextNode(alls.note),
-   //      );
 
         div.appendChild(elem);
         div.appendChild(paraph);
